@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Update { video.name }</title>
+</head>
+<body>
+
+
+<div class="header">
+  <div class="logo-data">
+    App Logo
+  </div>
+  <ul>
+    {% for video in video_list %}
+      <li><a href="{{ url 'video:category' video.category}}">{{ video.category }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div>
+  <h3>{{ video.name }}</h3>
+  <p>{{ video.description }}</p>
+  <p>{{ video.category }}</p>
+</div>
+<div>
+  <div class="video-card-view">
+    {% for video in vide_list %}
+    <a href="{{ url 'video:detail' video.id }}">
+      <div class="header">{{ video.name }}</div>
+      <video src="{{ video.thumbnail.url }}">{{ video.name }}</video>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+<div>
+  Footer
+</div>
+</body>
+</html>

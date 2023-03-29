@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delete {{ video.id }}</title>
+</head>
+<body>
+  <div>
+    <h1>{{ video.name }}</h1>
+    <p>Are you sure you want to delete this video? </p>
+    <a href="{{ url 'video:delete' video.id }}">Delete</a> | <a hef="{{ url 'video:list' }}">Cancel</a>
+  </div>
+</body>
+</html>
